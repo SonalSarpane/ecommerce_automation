@@ -1,4 +1,4 @@
-package com.automationpractice.baseTest;
+package com.automationpractice.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -11,10 +11,18 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Level;
 
-public class baseTest {
+public class BaseTest {
 
-    public static WebDriver driver;
-    public static Properties prop;
+    private static WebDriver driver;
+    private static Properties prop;
+
+    public static WebDriver getDriver() {
+        return driver;
+    }
+
+    public static Properties getProp() {
+        return prop;
+    }
 
     private void loadProperties() {
         prop = new Properties();
@@ -39,7 +47,7 @@ public class baseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.get(prop.getProperty("yourLaga.url"));
+        driver.get(prop.getProperty("automation.url"));
         return driver;
     }
 

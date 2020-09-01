@@ -1,8 +1,9 @@
 @login
-Feature: YourLaga Login/Logout Feature
+Feature: Login/Logout Feature
 
-  Background: User is on Login Page
-    When I entered valid Username and Password
-    And I click on signin button
-    Then I should see my account page
+  Scenario: User is on Home Page
+    When I click on signin button
+    Then I enter valid Username and Password
+    Then I clicked on signin button
+    Then I should see my account name is displayed
 
